@@ -1,0 +1,12 @@
+language: python
+python:
+  - 2.7
+env:
+  global:
+    - secure: TWwConXOm67HA8r+PsmO8XYyicdWShKQI7KNNhBY5NXFWnpeH4GZ5iJXT3Y4WcwpWy0eW2VAfcvaUbEeiC0YI415QWkxKZrXudza4UZ1RAh5nwgxKs76lDCQd+csZNcQVs183+L5Fna453ukbLKq0oXj85JMIg/yWO0HtIqoZeKnrf7OwTxgxDIS4dowAjhY5T9imNfUkZc5Ss/Vjlyy7BJCvGffJhscZhDv/6MgABUDOyrkoeIUy52apMZKYfrptpLXSH8K6qusDnJIAFMjiz/RcnnGA+bjx3PhWRyfaPryd4Gzmx39n7BpamwTi4soXbvsD7A6Qdn43ZaeYqKrLA==
+    - secure: UGkUu0AGk6Fknb39VUqjdSABeVKod+8L0VHwDkUg6koKlvHx/2AzcCeUkvOwiLNLbl3Tl2FEETAqYNPBdgnqc1vIpy43RsgZHs6Tg2wChKTb3GBlneU6QJRmruTHZbG5C56VVLf6itGeoiXzNGHZGLL+EmlaYjHo+oaQH/ZfGUi551eoZdNE703LnlX65rtxSuGkErbKtkzfE/XLctH6BOme7Ff390gqzBcnfoOYapvloSIF8ZUIQavTdgM4eypzTFipRTJYJ6hAPLFcuvI4S7I28wlacUmE4XjUR2NufWdQrYryvvjlnJnKEWzcmJVzjtM5+XYyaWButTom/ILSKQ==
+install:
+  - pip install awscli
+script:
+  - aws s3 cp s3://s3-download-demo/config.json config.json
+  - cat config.json
